@@ -1,0 +1,10 @@
+//Query to get 100 cities from wiki data
+
+SELECT  ?Subject ?Predicate ?Object
+  where {
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+    ?Subject ?Predicate ?Object .
+    ?s wdt:P31 ?o.
+    ?s ?p wd:Q515 .
+  }
+LIMIT 100
